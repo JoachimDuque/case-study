@@ -1,8 +1,5 @@
-
 import java.io.Serializable;
 import java.util.ArrayList;
-
-
 
 public class Course implements Serializable {
 	private String Course_Name;
@@ -10,14 +7,10 @@ public class Course implements Serializable {
 	private int Maximum_Students;
 	
 	private ArrayList <Student> Student_Names = new ArrayList<Student>();
-	
 	//THIS IS THE # OF STUNDETS IN THE COURSE NOW
 	private int Current_Students = 0;
-	
 	private String Instructor;
-	
 	private String Course_Section;
-	
 	private String Course_Location;
 
 	public String getCourse_Name() {
@@ -33,16 +26,11 @@ public class Course implements Serializable {
 		Instructor = instructor;
 		Course_Section = course_Section;
 		Course_Location = course_Location;
-		
 	}
-
-	
 
 	public Course() {
 		// TODO Auto-generated constructor stub
 	}
-	
-
 
 	public void setCourse_Name(String course_Name) {
 		Course_Name = course_Name;
@@ -66,64 +54,28 @@ public class Course implements Serializable {
 
 	public ArrayList<Student> getStudent_Names() {
 		return this.Student_Names;
-		
-		
-		
 	}
 	
 	public ArrayList<Student> viewStudent_Names() {
-		
 		return this.Student_Names;
-		
 	}
 
 	public  void add_Student(Student student_Names) {
-		
-	
-		
-		
 		if (this.Current_Students < this.getMaximum_Students()) {
-			
-			
-			
-			
-		Student_Names.add(student_Names);
-		
-		Current_Students ++;
-		
-		
-		System.out.println("You have registered in the class sucessfully.");
-		
-		
+			Student_Names.add(student_Names);
+			Current_Students ++;
 
-		
-	}
-		else {
-			
-			
+			System.out.println("You have registered in the class sucessfully.");
+		} else {
 			//this is becasue i always add to course even when full
-			
 			student_Names.withdraw(this.Course_Name);
-			
-			
-			
 			System.out.println("Sorry this course is full.");
-			
-			
-			
 		}
-		
-
-		
 	}
-	
-	
-	
+
 	public void delete_Student(Student student_Names) {
 		this.Student_Names.remove(student_Names);
-		
-		Current_Students --;
-		
+		Current_Students--;
 	}
 
 	public int getCurrent_Students() {
@@ -157,11 +109,5 @@ public class Course implements Serializable {
 	public void setCourse_Location(String course_Location) {
 		Course_Location = course_Location;
 	}
-	
-	
-	
-	 
-	
+
 }
-
-
